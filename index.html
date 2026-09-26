@@ -128,7 +128,17 @@
       <div class="about__grid">
         <div class="about__card" data-reveal>
           <div class="about__card-art">
-            <span class="about__monogram">AS</span>
+            <picture class="about__photo">
+              <source type="image/webp"
+                      srcset="profile-480.webp 480w, profile-960.webp 960w"
+                      sizes="(max-width: 760px) 58vw, 250px" />
+              <img src="profile-480.jpg"
+                   srcset="profile-480.jpg 480w, profile-960.jpg 960w"
+                   sizes="(max-width: 760px) 58vw, 250px"
+                   alt="Portrait of Abhishek S"
+                   width="480" height="480"
+                   loading="lazy" decoding="async" />
+            </picture>
           </div>
         </div>
         <div class="about__body">
@@ -168,54 +178,57 @@
 
       <ul class="work__list">
         <li class="project" data-reveal data-c1="#d5ff3f" data-c2="#0e3b2e" style="--pc1:#d5ff3f;--pc2:#0e3b2e">
-          <a class="project__link" href="https://github.com/abhisachu54321-web?tab=repositories" target="_blank" rel="noopener" data-hover aria-label="Aura AI — view on GitHub">
+          <div class="project__link" data-hover>
             <span class="project__index">01</span>
             <span class="project__main">
               <span class="project__name">Aura AI</span>
-              <span class="project__tags">Artificial Intelligence</span>
+              <span class="project__tags">Generative AI · AI APIs</span>
+              <span class="project__desc">An AI application built around generative AI and modern AI APIs.</span>
             </span>
-            <span class="project__year" style="white-space:nowrap">AI / ML</span>
-            <span class="project__arrow" aria-hidden="true">↗</span>
+            <span class="project__year">AI / ML</span>
             <span class="project__art" aria-hidden="true"></span>
-          </a>
+          </div>
         </li>
         <li class="project" data-reveal data-c1="#7c5cff" data-c2="#160b33" style="--pc1:#7c5cff;--pc2:#160b33">
-          <a class="project__link" href="https://github.com/abhisachu54321-web?tab=repositories" target="_blank" rel="noopener" data-hover aria-label="Timetable Generator — view on GitHub">
+          <div class="project__link" data-hover>
             <span class="project__index">02</span>
             <span class="project__main">
               <span class="project__name">Timetable Generator</span>
-              <span class="project__tags">Scheduling Tool</span>
+              <span class="project__tags">Java · MySQL</span>
+              <span class="project__desc">A tool for generating structured class timetables with database support.</span>
             </span>
             <span class="project__year">Software</span>
-            <span class="project__arrow" aria-hidden="true">↗</span>
             <span class="project__art" aria-hidden="true"></span>
-          </a>
+          </div>
         </li>
         <li class="project" data-reveal data-c1="#3fd6ff" data-c2="#062a35" style="--pc1:#3fd6ff;--pc2:#062a35">
-          <a class="project__link" href="https://github.com/abhisachu54321-web?tab=repositories" target="_blank" rel="noopener" data-hover aria-label="Smart Door — view on GitHub">
+          <div class="project__link" data-hover>
             <span class="project__index">03</span>
             <span class="project__main">
               <span class="project__name">Smart Door</span>
-              <span class="project__tags">Embedded System</span>
+              <span class="project__tags">C · Embedded Systems</span>
+              <span class="project__desc">An embedded system for smart, automated door control.</span>
             </span>
             <span class="project__year">Embedded</span>
-            <span class="project__arrow" aria-hidden="true">↗</span>
             <span class="project__art" aria-hidden="true"></span>
-          </a>
+          </div>
         </li>
         <li class="project" data-reveal data-c1="#ff7ac6" data-c2="#33101f" style="--pc1:#ff7ac6;--pc2:#33101f">
-          <a class="project__link" href="https://github.com/abhisachu54321-web?tab=repositories" target="_blank" rel="noopener" data-hover aria-label="Temperature Alert System — view on GitHub">
+          <div class="project__link" data-hover>
             <span class="project__index">04</span>
             <span class="project__main">
               <span class="project__name">Temperature Alert</span>
-              <span class="project__tags">Monitoring · Alerts</span>
+              <span class="project__tags">C · Embedded Systems</span>
+              <span class="project__desc">A monitoring system that raises an alert when temperature crosses a set threshold.</span>
             </span>
             <span class="project__year">Embedded</span>
-            <span class="project__arrow" aria-hidden="true">↗</span>
             <span class="project__art" aria-hidden="true"></span>
-          </a>
+          </div>
         </li>
       </ul>
+      <a class="work__more" href="https://github.com/abhisachu54321-web" target="_blank" rel="noopener" data-hover>
+        Browse source code on GitHub ↗
+      </a>
     </section>
 
     <!-- ================= SKILLS ================= -->
@@ -277,6 +290,7 @@
         <ul class="contact__socials" data-reveal>
           <li><a href="https://github.com/abhisachu54321-web" target="_blank" rel="noopener" data-hover>GitHub ↗</a></li>
           <li><a href="https://www.linkedin.com/in/abhishek-s-a4511a340" target="_blank" rel="noopener" data-hover>LinkedIn ↗</a></li>
+          <li><a href="https://www.instagram.com/abhishek.s543?stkn=MXd1ZGF5aXU3ZHl4ag==" target="_blank" rel="noopener" data-hover>Instagram ↗</a></li>
         </ul>
       </div>
     </section>

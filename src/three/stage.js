@@ -19,6 +19,7 @@ THREE.ColorManagement.enabled = false;
 export class Stage {
   #onResize;
   #onPointerMove;
+  #onTouchMove;
   #onVisibility;
   #onBlur;
   #onFocus;
@@ -33,7 +34,10 @@ export class Stage {
 
     this.renderer = new THREE.WebGLRenderer({
       canvas,
-      antialias: perf.tier === 'high',
+      // MSAA everywhere except the true low tier — alias jaggies on the
+      // blob silhouette were the main mobile sharpness complaint. On
+      // retina/high-DPR screens AA is almost free compared to resolution.
+      antialias: perf.tier !== 'low',
       alpha: true,
       stencil: false,
       powerPreference: 'high-performance',
@@ -119,6 +123,15 @@ export class Stage {
       this.pointer.tx = (e.clientX / window.innerWidth) * 2 - 1;
       this.pointer.ty = -((e.clientY / window.innerHeight) * 2 - 1);
     };
+    // During native touch scrolling the browser cancels the pointer stream;
+    // a passive touch listener keeps the parallax fed mid-scroll without
+    // ever blocking the scroll itself.
+    this.#onTouchMove = (e) => {
+      const t = e.touches[0];
+      if (!t) return;
+      this.pointer.tx = (t.clientX / window.innerWidth) * 2 - 1;
+      this.pointer.ty = -((t.clientY / window.innerHeight) * 2 - 1);
+    };
     this.#onVisibility = () => {
       this._inFocus = !document.hidden && document.hasFocus();
       this.#syncPower();
@@ -131,7 +144,10 @@ export class Stage {
     };
 
     window.addEventListener('resize', this.#onResize, { passive: true });
+    window.addEventListener('orientationchange', this.#onResize, { passive: true });
     window.addEventListener('pointermove', this.#onPointerMove, { passive: true });
+    window.addEventListener('touchstart', this.#onTouchMove, { passive: true });
+    window.addEventListener('touchmove', this.#onTouchMove, { passive: true });
     document.addEventListener('visibilitychange', this.#onVisibility);
     window.addEventListener('blur', this.#onBlur);
     window.addEventListener('focus', this.#onFocus);
@@ -189,6 +205,15 @@ export class Stage {
     const t = this.elapsed;
     this.hero.update(t, dt);
     this.dust.update(t, dt);
+
+    // Whole-scene tilt toward the pointer (mouse or touch) — the object
+    // "acknowledges" input while the camera parallax stays subtle.
+    this.hero.rotation.y += (p.x * 0.15 - this.hero.rotation.y) * damp(3.6);
+    this.hero.rotation.x += (-p.y * 0.09 - this.hero.rotation.x) * damp(3.6);
+
+    // Section-connection: particles gently thin out as the hero leaves —
+    // the transition out of the hero reads as one continuous breath.
+    this.dust.material.uniforms.uOpacity.value = 1 - this.scroll.p * 0.55;
 
     // Camera drift from pointer (parallax), scroll pushes past the object.
     const sp = this.scroll.p;

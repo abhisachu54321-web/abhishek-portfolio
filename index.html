@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Abhishek S — Computer Science Engineering Student &amp; Developer</title>
+  <meta name="description" content="Portfolio of Abhishek S, Computer Science Engineering student and developer — projects across AI, web and embedded systems." />
+  <meta name="theme-color" content="#060608" />
+  <meta property="og:title" content="Abhishek S — Computer Science Engineering Student &amp; Developer" />
+  <meta property="og:description" content="Projects across AI, web and embedded systems — from Aura AI to a Temperature Alert System." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23060608'/%3E%3Cpath d='M32 12 52 32 32 52 12 32z' fill='%23d5ff3f'/%3E%3C/svg%3E" />
+  <!-- Boot failsafe (non-module): if the module bundle can never execute
+       (blocked scripts, failed chunks), still lift the preloader so the
+       fully-static content below remains visible and readable. -->
+  <script>
+    window.__BOOTED__ = false;
+    document.addEventListener('DOMContentLoaded', function () {
+      setTimeout(function () {
+        if (!window.__BOOTED__) {
+          var p = document.getElementById('preloader');
+          if (p && p.parentNode) p.parentNode.removeChild(p);
+        }
+      }, 4000);
+    });
+  </script>
+  <noscript><style>.preloader, .cursor { display: none !important; }</style></noscript>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Preloader -->
+  <div class="preloader" id="preloader" aria-hidden="true">
+    <div class="preloader__inner">
+      <span class="preloader__brand">AS<span class="dot">.</span></span>
+      <span class="preloader__count" id="preloader-count">000</span>
+    </div>
+    <div class="preloader__bar"><span id="preloader-bar"></span></div>
+  </div>
+
+  <!-- WebGL stage (single canvas for the whole site) -->
+  <div class="bg-gradient" aria-hidden="true"></div>
+  <canvas id="gl" aria-hidden="true"></canvas>
+  <div class="noise" aria-hidden="true"></div>
+
+  <!-- Custom cursor (disabled on touch devices) -->
+  <div class="cursor" aria-hidden="true">
+    <div class="cursor__dot" id="cursor-dot"></div>
+    <div class="cursor__ring" id="cursor-ring"></div>
+  </div>
+
+  <!-- Header -->
+  <header class="header" id="header">
+    <a href="#top" class="header__logo" data-hover data-scroll-to>a<span>/</span>s</a>
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav__list">
+        <li><a href="#about" data-hover data-scroll-to>About</a></li>
+        <li><a href="#work" data-hover data-scroll-to>Work</a></li>
+        <li><a href="#skills" data-hover data-scroll-to>Skills</a></li>
+        <li><a href="#education" data-hover data-scroll-to>Education</a></li>
+        <li><a href="#contact" data-hover data-scroll-to>Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="header__cta" data-hover data-scroll-to>Let’s talk</a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" data-hover>
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="mmenu" id="mobile-menu" aria-hidden="true">
+    <nav aria-label="Mobile">
+      <ul class="mmenu__list">
+        <li><a href="#about" data-scroll-to><em>01</em>About</a></li>
+        <li><a href="#work" data-scroll-to><em>02</em>Work</a></li>
+        <li><a href="#skills" data-scroll-to><em>03</em>Skills</a></li>
+        <li><a href="#education" data-scroll-to><em>04</em>Education</a></li>
+        <li><a href="#contact" data-scroll-to><em>05</em>Contact</a></li>
+      </ul>
+    </nav>
+    <div class="mmenu__foot">
+      <span>B.Tech CSE · UKF College of Engineering and Technology</span>
+      <a href="https://github.com/abhisachu54321-web" target="_blank" rel="noopener">github.com/abhisachu54321-web</a>
+    </div>
+  </div>
+
+  <main id="main">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="top">
+      <div class="hero__fallback" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <p class="hero__eyebrow" data-intro>
+          <span class="pulse-dot"></span>Portfolio — 2026 · Open to opportunities
+        </p>
+        <h1 class="hero__title">
+          <span class="line" data-split>Abhishek</span>
+          <span class="line" data-split>S</span>
+        </h1>
+        <div class="hero__meta" data-intro>
+          <p class="hero__role">Computer Science Engineering<br />Student &amp; Developer</p>
+          <p class="hero__blurb">
+            I build practical software across systems, web and AI — and I
+            like understanding how things work under the hood.
+          </p>
+        </div>
+      </div>
+      <div class="hero__foot" data-intro>
+        <a href="#about" class="hero__scroll" data-hover data-scroll-to>
+          <span class="hero__scroll-line"></span>Scroll
+        </a>
+        <p class="hero__loc">Kerala — India</p>
+      </div>
+    </section>
+
+    <!-- Marquee -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track" id="marquee-track">
+        <span>C<i>◆</i>Java<i>◆</i>Python<i>◆</i>JavaScript<i>◆</i>PHP<i>◆</i>SQL<i>◆</i>Machine Learning<i>◆</i>Generative AI<i>◆</i>Git &amp; GitHub<i>◆</i></span>
+      </div>
+    </div>
+
+    <!-- ================= ABOUT ================= -->
+    <section class="about section" id="about">
+      <div class="section__head">
+        <span class="section__index">01</span>
+        <h2 class="section__title" data-split>About</h2>
+      </div>
+      <div class="about__grid">
+        <div class="about__card" data-reveal>
+          <div class="about__card-art">
+            <span class="about__monogram">AS</span>
+          </div>
+        </div>
+        <div class="about__body">
+          <p class="about__lead" data-reveal>
+            I’m Abhishek S, a Computer Science Engineering student at
+            UKF College of Engineering and Technology.
+          </p>
+          <p class="about__text" data-reveal>
+            My work spans the fundamentals — C, Java, Python, data structures,
+            databases and operating systems — through to the web with
+            JavaScript, Node.js and PHP, and applied AI with ML fundamentals,
+            generative AI and AI APIs.
+          </p>
+          <p class="about__text" data-reveal>
+            Whether it’s an AI tool, a timetable generator or an embedded
+            alert system, I like shipping things people can actually use —
+            and learning something new while doing it.
+          </p>
+          <ul class="about__facts" data-reveal>
+            <li><b>B.Tech</b><span>Computer Science Eng.</span></li>
+            <li><b>20+</b><span>skills &amp; tools</span></li>
+            <li><b>4</b><span>projects shipped</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WORK ================= -->
+    <section class="work section" id="work">
+      <div class="section__head">
+        <span class="section__index">02</span>
+        <h2 class="section__title" data-split>Projects</h2>
+      </div>
+
+      <!-- Floating preview that follows the cursor (desktop only) -->
+      <div class="work__preview" id="work-preview" aria-hidden="true"><span></span></div>
+
+      <ul class="work__list">
+        <li class="project" data-reveal data-c1="#d5ff3f" data-c2="#0e3b2e" style="--pc1:#d5ff3f;--pc2:#0e3b2e">
+          <a class="project__link" href="https://github.com/abhisachu54321-web?tab=repositories" target="_blank" rel="noopener" data-hover aria-label="Aura AI — view on GitHub">
+            <span class="project__index">01</span>
+            <span class="project__main">
+              <span class="project__name">Aura AI</span>
+              <span class="project__tags">Artificial Intelligence</span>
+            </span>
+            <span class="project__year" style="white-space:nowrap">AI / ML</span>
+            <span class="project__arrow" aria-hidden="true">↗</span>
+            <span class="project__art" aria-hidden="true"></span>
+          </a>
+        </li>
+        <li class="project" data-reveal data-c1="#7c5cff" data-c2="#160b33" style="--pc1:#7c5cff;--pc2:#160b33">
+          <a class="project__link" href="https://github.com/abhisachu54321-web?tab=repositories" target="_blank" rel="noopener" data-hover aria-label="Timetable Generator — view on GitHub">
+            <span class="project__index">02</span>
+            <span class="project__main">
+              <span class="project__name">Timetable Generator</span>
+              <span class="project__tags">Scheduling Tool</span>
+            </span>
+            <span class="project__year">Software</span>
+            <span class="project__arrow" aria-hidden="true">↗</span>
+            <span class="project__art" aria-hidden="true"></span>
+          </a>
+        </li>
+        <li class="project" data-reveal data-c1="#3fd6ff" data-c2="#062a35" style="--pc1:#3fd6ff;--pc2:#062a35">
+          <a class="project__link" href="https://github.com/abhisachu54321-web?tab=repositories" target="_blank" rel="noopener" data-hover aria-label="Smart Door — view on GitHub">
+            <span class="project__index">03</span>
+            <span class="project__main">
+              <span class="project__name">Smart Door</span>
+              <span class="project__tags">Embedded System</span>
+            </span>
+            <span class="project__year">Embedded</span>
+            <span class="project__arrow" aria-hidden="true">↗</span>
+            <span class="project__art" aria-hidden="true"></span>
+          </a>
+        </li>
+        <li class="project" data-reveal data-c1="#ff7ac6" data-c2="#33101f" style="--pc1:#ff7ac6;--pc2:#33101f">
+          <a class="project__link" href="https://github.com/abhisachu54321-web?tab=repositories" target="_blank" rel="noopener" data-hover aria-label="Temperature Alert System — view on GitHub">
+            <span class="project__index">04</span>
+            <span class="project__main">
+              <span class="project__name">Temperature Alert</span>
+              <span class="project__tags">Monitoring · Alerts</span>
+            </span>
+            <span class="project__year">Embedded</span>
+            <span class="project__arrow" aria-hidden="true">↗</span>
+            <span class="project__art" aria-hidden="true"></span>
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section class="skills section" id="skills">
+      <div class="section__head">
+        <span class="section__index">03</span>
+        <h2 class="section__title" data-split>Skills</h2>
+      </div>
+      <div class="skills__grid">
+        <div class="skills__group" data-reveal>
+          <h3>Languages</h3>
+          <ul><li>C</li><li>Java</li><li>Python</li><li>JavaScript</li><li>PHP</li><li>SQL</li></ul>
+        </div>
+        <div class="skills__group" data-reveal>
+          <h3>CS Fundamentals</h3>
+          <ul><li>Data Structures</li><li>Algorithms</li><li>DBMS</li><li>Operating Systems</li><li>Computer Networks</li><li>Computer Architecture</li><li>Software Engineering</li></ul>
+        </div>
+        <div class="skills__group" data-reveal>
+          <h3>Web &amp; Tools</h3>
+          <ul><li>HTML</li><li>CSS</li><li>Node.js</li><li>Git / GitHub</li><li>VS Code</li><li>XAMPP</li></ul>
+        </div>
+        <div class="skills__group" data-reveal>
+          <h3>Data &amp; AI</h3>
+          <ul><li>MySQL</li><li>ML Fundamentals</li><li>Generative AI</li><li>AI APIs</li></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EDUCATION ================= -->
+    <section class="exp section" id="education">
+      <div class="section__head">
+        <span class="section__index">04</span>
+        <h2 class="section__title" data-split>Education</h2>
+      </div>
+      <ol class="exp__timeline">
+        <li class="exp__item" data-reveal>
+          <span class="exp__dot" aria-hidden="true"></span>
+          <span class="exp__when">Undergraduate</span>
+          <div class="exp__role">
+            <h3>B.Tech — Computer Science Engineering</h3>
+            <span class="exp__where">UKF College of Engineering and Technology</span>
+            <p>Studying the core of computing — data structures, algorithms, DBMS, operating systems, computer networks, computer architecture and software engineering — alongside applied work in web, embedded systems and AI.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section class="contact section" id="contact">
+      <div class="section__head">
+        <span class="section__index">05</span>
+        <h2 class="section__title" data-split>Contact</h2>
+      </div>
+      <div class="contact__inner">
+        <p class="contact__kicker" data-reveal>Have an idea, a project, or just want to <em>connect</em>?</p>
+        <a class="contact__mail" href="https://www.linkedin.com/in/abhishek-s-a4511a340" target="_blank" rel="noopener" data-hover data-reveal>
+          <span data-split>Let’s connect ↗</span>
+        </a>
+        <ul class="contact__socials" data-reveal>
+          <li><a href="https://github.com/abhisachu54321-web" target="_blank" rel="noopener" data-hover>GitHub ↗</a></li>
+          <li><a href="https://www.linkedin.com/in/abhishek-s-a4511a340" target="_blank" rel="noopener" data-hover>LinkedIn ↗</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+      <p>© 2026 Abhishek S — Built with Three.js, GSAP &amp; care for frame times.</p>
+      <button class="footer__top" id="to-top" data-hover>Back to top ↑</button>
+    </footer>
+  </main>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

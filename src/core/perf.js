@@ -15,7 +15,10 @@
 
 export const TIER = Object.freeze({ HIGH: 'high', MEDIUM: 'medium', LOW: 'low' });
 
-const DPR_CAP = { [TIER.HIGH]: 2.0, [TIER.MEDIUM]: 1.5, [TIER.LOW]: 1.0 };
+// DPR ceilings: sharpness first — modern phones are 2–3x displays, so capping
+// low is exactly what made the mobile scene look soft. Struggling devices are
+// walked back down automatically by the FPS monitor (floor 0.7).
+const DPR_CAP = { [TIER.HIGH]: 2.0, [TIER.MEDIUM]: 2.0, [TIER.LOW]: 1.5 };
 const DPR_FLOOR = 0.7;
 
 export class PerformanceManager {
@@ -101,7 +104,11 @@ export class PerformanceManager {
 
     // Software rasterizer (headless CI, very old machines) → lowest cost.
     if (/swiftshader|llvmpipe|softpipe|software/i.test(gpu)) return TIER.LOW;
-    if (mobile || mem <= 3 || cores <= 4) return TIER.LOW;
+    if (mobile) {
+      // Modern phones (8-core, 4 GB+) handle the medium scene at 2x DPR fine.
+      return (mem <= 2 || cores <= 4) ? TIER.LOW : TIER.MEDIUM;
+    }
+    if (mem <= 3 || cores <= 4) return TIER.LOW;
     if (mem <= 4 || cores <= 6 || /intel.*(hd|uhd) graphics [4-6]\d\d/i.test(gpu)) return TIER.MEDIUM;
     return TIER.HIGH;
   }

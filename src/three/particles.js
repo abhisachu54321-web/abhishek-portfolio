@@ -38,6 +38,7 @@ void main() {
 
 const FRAG = /* glsl */ `
 uniform vec3 uAccent;
+uniform float uOpacity;
 varying float vSeed;
 varying float vFade;
 void main() {
@@ -46,7 +47,7 @@ void main() {
   if (alpha < 0.004) discard;             // skip fully-invisible fragments
   // Mostly dim white dust, a few accent sparks.
   vec3 col = mix(vec3(0.55, 0.57, 0.62), uAccent, step(0.9, vSeed));
-  gl_FragColor = vec4(col, alpha * 0.62);
+  gl_FragColor = vec4(col, alpha * 0.62 * uOpacity);
 }
 `;
 
@@ -82,6 +83,7 @@ export class Particles extends THREE.Points {
         uTime: { value: 0 },
         uPixelRatio: { value: perf.dpr },
         uAccent: { value: new THREE.Color(accentColor) },
+        uOpacity: { value: 1 },
       },
       transparent: true,
       depthWrite: false,

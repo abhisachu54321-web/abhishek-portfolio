@@ -483,6 +483,40 @@ html.no-webgl #gl { display: none; }
   font-size: 0.92rem; color: var(--ink-dim); font-weight: 400;
   max-width: 52ch; margin-top: 0.15rem;
 }
+.project__live-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.55rem;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--accent);
+  padding: 0.32rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(213, 255, 63, 0.38);
+  background: rgba(213, 255, 63, 0.08);
+  width: fit-content;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s var(--ease-out);
+}
+.project__live-link:hover {
+  background: var(--accent);
+  color: #0b0b10;
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(213, 255, 63, 0.35);
+}
+.project__live-link svg {
+  transition: transform 0.3s var(--ease-out);
+}
+.project__live-link:hover svg {
+  transform: translate(2px, -2px);
+}
 .project__year { font-family: var(--font-mono); font-size: 0.85rem; color: var(--ink-dim); white-space: nowrap; }
 .work__more {
   display: inline-block;

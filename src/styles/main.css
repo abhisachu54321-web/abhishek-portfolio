@@ -458,6 +458,11 @@ html.no-webgl #gl { display: none; }
   display: block;
   transition: transform 0.45s var(--ease-out);
 }
+.project__thumb img.project__thumb-img--contain {
+  object-fit: contain;
+  background-color: #303030;
+  padding: 5px;
+}
 .project__link:hover .project__thumb img {
   transform: scale(1.05);
 }

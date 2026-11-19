@@ -52,7 +52,7 @@ void main() {
 `;
 
 export class Particles extends THREE.Points {
-  constructor(perf, accentColor = 0xd5ff3f) {
+  constructor(perf, accentColor = 0x8b5cf6) {
     const positions = new Float32Array(MAX_COUNT * 3);
     const scales = new Float32Array(MAX_COUNT);
     const seeds = new Float32Array(MAX_COUNT);

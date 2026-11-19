@@ -50,8 +50,8 @@ export class Stage {
     this.camera = new THREE.PerspectiveCamera(38, 1, 0.1, 40);
     this.camera.position.set(0, 0.1, 7.2);
 
-    this.hero = new HeroObject(perf);
-    this.dust = new Particles(perf);
+    this.hero = new HeroObject(perf, 0x8b5cf6);
+    this.dust = new Particles(perf, 0x8b5cf6);
     this.scene.add(this.hero, this.dust);
 
     // Smoothed inputs (targets set by listeners, values damped per-frame)

@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <title>Abhishek S — Computer Science Engineering Student &amp; Developer</title>
-  <meta name="description" content="Portfolio of Abhishek S, Computer Science Engineering student and developer — projects across AI, web and embedded systems." />
-  <meta name="theme-color" content="#060608" />
-  <meta property="og:title" content="Abhishek S — Computer Science Engineering Student &amp; Developer" />
-  <meta property="og:description" content="Projects across AI, web and embedded systems — from Aura AI to a Temperature Alert System." />
+  <title>ABHI543 — Abhishek S | Developer Portfolio</title>
+  <meta name="description" content="Official portfolio of Abhishek S (ABHI543), Computer Science Engineering student and developer — projects across AI, web and embedded systems." />
+  <meta name="theme-color" content="#09090b" />
+  <meta property="og:title" content="ABHI543 — Abhishek S | Developer Portfolio" />
+  <meta property="og:description" content="Projects across AI, web and embedded systems by ABHI543 — from Aura AI to Tourist Website." />
   <meta property="og:type" content="website" />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23060608'/%3E%3Cpath d='M32 12 52 32 32 52 12 32z' fill='%23d5ff3f'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/jpeg" href="logo-abhi543.jpg" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2309090b'/%3E%3Cpath d='M32 10 L48 48 L38 48 L33.5 35 L22 35 L32 10 Z' fill='%23FAFAFA'/%3E%3Cellipse cx='32' cy='36' rx='22' ry='8' fill='none' stroke='%238B5CF6' stroke-width='3.5' transform='rotate(-18 32 36)'/%3E%3Cpolygon points='50,16 52,11 55,14 52,16 54,20 50,17 46,19 48,15' fill='%23A78BFA'/%3E%3C/svg%3E" />
   <!-- Boot failsafe (non-module): if the module bundle can never execute
        (blocked scripts, failed chunks), still lift the preloader so the
        fully-static content below remains visible and readable. -->
@@ -32,7 +33,10 @@
   <!-- Preloader -->
   <div class="preloader" id="preloader" aria-hidden="true">
     <div class="preloader__inner">
-      <span class="preloader__brand">AS<span class="dot">.</span></span>
+      <div class="preloader__brand-wrap">
+        <img src="logo-abhi543.jpg" alt="ABHI543 Logo" class="preloader__logo" />
+        <span class="preloader__brand">ABHI<span class="accent-violet">543</span></span>
+      </div>
       <span class="preloader__count" id="preloader-count">000</span>
     </div>
     <div class="preloader__bar"><span id="preloader-bar"></span></div>
@@ -51,7 +55,10 @@
 
   <!-- Header -->
   <header class="header" id="header">
-    <a href="#top" class="header__logo" data-hover data-scroll-to>a<span>/</span>s</a>
+    <a href="#top" class="header__brand" data-hover data-scroll-to aria-label="ABHI543 Homepage">
+      <img src="logo-abhi543.jpg" alt="ABHI543 Logo" class="header__logo-img" />
+      <span class="header__logo-text">ABHI<span class="accent-violet">543</span></span>
+    </a>
     <nav class="nav" aria-label="Primary">
       <ul class="nav__list">
         <li><a href="#about" data-hover data-scroll-to>About</a></li>
@@ -69,6 +76,10 @@
 
   <!-- Mobile menu -->
   <div class="mmenu" id="mobile-menu" aria-hidden="true">
+    <div class="mmenu__brand">
+      <img src="logo-abhi543.jpg" alt="ABHI543 Logo" class="mmenu__logo" />
+      <span class="mmenu__brand-text">ABHI<span class="accent-violet">543</span></span>
+    </div>
     <nav aria-label="Mobile">
       <ul class="mmenu__list">
         <li><a href="#about" data-scroll-to><em>01</em>About</a></li>
@@ -90,14 +101,20 @@
       <div class="hero__fallback" aria-hidden="true"></div>
       <div class="hero__inner">
         <p class="hero__eyebrow" data-intro>
-          <span class="pulse-dot"></span>Portfolio — 2026 · Open to opportunities
+          <span class="pulse-dot"></span>ABHI543 — 2026 · Open to opportunities
         </p>
         <h1 class="hero__title">
           <span class="line" data-split>Abhishek</span>
           <span class="line" data-split>S</span>
         </h1>
         <div class="hero__meta" data-intro>
-          <p class="hero__role">Computer Science Engineering<br />Student &amp; Developer</p>
+          <div>
+            <p class="hero__role">Computer Science Engineering<br />Student &amp; Developer</p>
+            <div class="hero__brand-badge">
+              <img src="logo-abhi543.jpg" alt="" class="hero__badge-icon" aria-hidden="true" />
+              <span>BUILD • CREATE • GROW</span>
+            </div>
+          </div>
           <p class="hero__blurb">
             I build practical software across systems, web and AI — and I
             like understanding how things work under the hood.
@@ -188,7 +205,10 @@
             </div>
             <span class="project__main">
               <span class="project__name">Aura AI</span>
-              <span class="project__tags">Generative AI · AI APIs</span>
+              <div class="project__meta-line">
+                <span class="project__tags">Generative AI · AI APIs</span>
+                <span class="project__brand-badge"><span class="project__sig-star">✦</span>ABHI543</span>
+              </div>
               <span class="project__desc">An AI application built around generative AI and modern AI APIs.</span>
               <a href="https://abhisachu54321-web.github.io/AURA_AI/" target="_blank" rel="noopener noreferrer" class="project__live-link" data-hover>
                 <span>Live Demo</span>
@@ -209,7 +229,10 @@
             </div>
             <span class="project__main">
               <span class="project__name">Tourist Website</span>
-              <span class="project__tags">Web Development · Travel &amp; Tourism</span>
+              <div class="project__meta-line">
+                <span class="project__tags">Web Development · Travel &amp; Tourism</span>
+                <span class="project__brand-badge"><span class="project__sig-star">✦</span>ABHI543</span>
+              </div>
               <span class="project__desc">A travel and tourism website offering customized tour packages, taxi services, and tourist bus booking enquiries to make every journey convenient and memorable.</span>
               <a href="https://tourist543.vercel.app/" target="_blank" rel="noopener noreferrer" class="project__live-link" data-hover>
                 <span>Live Demo</span>
@@ -230,13 +253,16 @@
             </div>
             <span class="project__main">
               <span class="project__name">Timetable Generator</span>
-              <span class="project__tags">Java · MySQL</span>
+              <div class="project__meta-line">
+                <span class="project__tags">Java · MySQL</span>
+                <span class="project__brand-badge"><span class="project__sig-star">✦</span>ABHI543</span>
+              </div>
               <span class="project__desc">A tool for generating structured class timetables with database support.</span>
             </span>
             <span class="project__year">Software</span>
           </div>
         </li>
-        <li class="project" data-reveal data-c1="#d5ff3f" data-c2="#0e3b2e" style="--pc1:#d5ff3f;--pc2:#0e3b2e">
+        <li class="project" data-reveal data-c1="#8b5cf6" data-c2="#1e1035" style="--pc1:#8b5cf6;--pc2:#1e1035">
           <div class="project__link" data-hover>
             <span class="project__index">04</span>
             <div class="project__thumb">
@@ -247,7 +273,10 @@
             </div>
             <span class="project__main">
               <span class="project__name">Smart Door</span>
-              <span class="project__tags">C · Embedded Systems</span>
+              <div class="project__meta-line">
+                <span class="project__tags">C · Embedded Systems</span>
+                <span class="project__brand-badge"><span class="project__sig-star">✦</span>ABHI543</span>
+              </div>
               <span class="project__desc">An embedded system for smart, automated door control.</span>
             </span>
             <span class="project__year">Embedded</span>
@@ -325,7 +354,14 @@
 
     <!-- ================= FOOTER ================= -->
     <footer class="footer">
-      <p>© 2026 Abhishek S — Built with Three.js, GSAP &amp; care for frame times.</p>
+      <div class="footer__brand">
+        <img src="logo-abhi543.jpg" alt="ABHI543 Logo" class="footer__brand-logo" />
+        <div class="footer__brand-text">
+          <span class="footer__brand-name">ABHI<span class="accent-violet">543</span></span>
+          <span class="footer__brand-motto">BUILD • CREATE • GROW</span>
+        </div>
+      </div>
+      <p class="footer__copy">© 2026 ABHI543 (Abhishek S) — Built with Three.js, GSAP &amp; care for frame times.</p>
       <button class="footer__top" id="to-top" data-hover>Back to top ↑</button>
     </footer>
   </main>

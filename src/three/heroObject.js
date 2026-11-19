@@ -135,7 +135,7 @@ export class HeroObject extends THREE.Group {
   /**
    * @param {import('../core/perf.js').PerformanceManager} perf
    */
-  constructor(perf, accentColor = 0xd5ff3f) {
+  constructor(perf, accentColor = 0x8b5cf6) {
     super();
     this.reducedMotion = perf.reducedMotion;
     const tier = perf.tier;
